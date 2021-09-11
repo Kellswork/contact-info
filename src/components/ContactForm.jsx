@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function UserForm() {
+export default function UserForm({addContact}) {
 
   const [contactInfo, setContactInfo] = useState({
     name: "",
@@ -14,7 +14,7 @@ export default function UserForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(contactInfo);
+    addContact(contactInfo);
     setContactInfo({ name: "", email: "", phonenumber: "" });
   };
 
